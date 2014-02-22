@@ -49,6 +49,7 @@
 		C90E817D18B956BA004BF989 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817C18B956BA004BF989 /* Security.framework */; };
 		C90E817F18B956C4004BF989 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817E18B956C4004BF989 /* StoreKit.framework */; };
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
+		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		C90E817C18B956BA004BF989 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C90E817E18B956C4004BF989 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C90E818018B956D1004BF989 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				C90E811218B94468004BF989 /* UIKit.framework in Frameworks */,
 				C90E810E18B94468004BF989 /* Foundation.framework in Frameworks */,
 				C90E817118B9557A004BF989 /* Parse.framework in Frameworks */,
+				C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +174,7 @@
 		C90E810C18B94468004BF989 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C90E818218B95BE5004BF989 /* FacebookSDK.framework */,
 				C90E818018B956D1004BF989 /* SystemConfiguration.framework */,
 				C90E817E18B956C4004BF989 /* StoreKit.framework */,
 				C90E817C18B956BA004BF989 /* Security.framework */,
@@ -510,6 +514,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/pbohrer/Desktop/GamePlan/GamePlan,
+					/Users/pbohrer/Desktop/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePlan/GamePlan-Prefix.pch";
@@ -527,6 +532,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/pbohrer/Desktop/GamePlan/GamePlan,
+					/Users/pbohrer/Desktop/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePlan/GamePlan-Prefix.pch";
