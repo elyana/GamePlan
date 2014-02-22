@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
-
+#import <Parse/Parse.h>
 @interface MainViewController ()
 
 @end
@@ -28,7 +28,9 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
 }
 
 - (void)viewWillAppear:(BOOL)animated
