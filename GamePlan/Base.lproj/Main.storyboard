@@ -78,6 +78,7 @@
                                 <state key="highlighted" image="FB_Button_Down.png"/>
                                 <connections>
                                     <action selector="loginButtonTouchHandler:" destination="FMc-ZG-6Hj" eventType="touchUpInside" id="vkT-vW-ZGI"/>
+                                    <segue destination="k9s-Y2-PuS" kind="push" id="dgV-xI-D6x"/>
                                 </connections>
                             </button>
                         </subviews>
