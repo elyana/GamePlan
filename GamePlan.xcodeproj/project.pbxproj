@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F02FA0418B977AA0069B48B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F02FA0318B977AA0069B48B /* Parse.framework */; };
 		C90E810E18B94468004BF989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E810D18B94468004BF989 /* Foundation.framework */; };
 		C90E811018B94468004BF989 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E810F18B94468004BF989 /* CoreGraphics.framework */; };
 		C90E811218B94468004BF989 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E811118B94468004BF989 /* UIKit.framework */; };
@@ -40,7 +41,6 @@
 		C90E816A18B944E2004BF989 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815C18B944E2004BF989 /* unlock.png */; };
 		C90E816D18B94503004BF989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C90E816C18B94503004BF989 /* AppDelegate.m */; };
 		C90E816F18B94579004BF989 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E816E18B94579004BF989 /* MapKit.framework */; };
-		C90E817118B9557A004BF989 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817018B95579004BF989 /* Parse.framework */; };
 		C90E817318B9564B004BF989 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817218B9564B004BF989 /* AudioToolbox.framework */; };
 		C90E817518B9565E004BF989 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817418B9565E004BF989 /* CFNetwork.framework */; };
 		C90E817718B95674004BF989 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817618B95674004BF989 /* CoreLocation.framework */; };
@@ -63,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F02FA0318B977AA0069B48B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C90E810A18B94468004BF989 /* GamePlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90E810D18B94468004BF989 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C90E810F18B94468004BF989 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,7 +106,6 @@
 		C90E816B18B94503004BF989 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C90E816C18B94503004BF989 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C90E816E18B94579004BF989 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C90E817018B95579004BF989 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = GamePlan/Parse.framework; sourceTree = "<group>"; };
 		C90E817218B9564B004BF989 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C90E817418B9565E004BF989 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C90E817618B95674004BF989 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -132,9 +132,9 @@
 				C90E817518B9565E004BF989 /* CFNetwork.framework in Frameworks */,
 				C90E817318B9564B004BF989 /* AudioToolbox.framework in Frameworks */,
 				C90E816F18B94579004BF989 /* MapKit.framework in Frameworks */,
+				3F02FA0418B977AA0069B48B /* Parse.framework in Frameworks */,
 				C90E811218B94468004BF989 /* UIKit.framework in Frameworks */,
 				C90E810E18B94468004BF989 /* Foundation.framework in Frameworks */,
-				C90E817118B9557A004BF989 /* Parse.framework in Frameworks */,
 				C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +174,7 @@
 		C90E810C18B94468004BF989 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F02FA0318B977AA0069B48B /* Parse.framework */,
 				C90E818218B95BE5004BF989 /* FacebookSDK.framework */,
 				C90E818018B956D1004BF989 /* SystemConfiguration.framework */,
 				C90E817E18B956C4004BF989 /* StoreKit.framework */,
@@ -183,7 +184,6 @@
 				C90E817618B95674004BF989 /* CoreLocation.framework */,
 				C90E817418B9565E004BF989 /* CFNetwork.framework */,
 				C90E817218B9564B004BF989 /* AudioToolbox.framework */,
-				C90E817018B95579004BF989 /* Parse.framework */,
 				C90E816E18B94579004BF989 /* MapKit.framework */,
 				C90E810D18B94468004BF989 /* Foundation.framework */,
 				C90E810F18B94468004BF989 /* CoreGraphics.framework */,
@@ -515,6 +515,7 @@
 					"$(inherited)",
 					/Users/pbohrer/Desktop/GamePlan/GamePlan,
 					/Users/pbohrer/Desktop/GamePlan,
+					/Users/jeremy/Documents/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePlan/GamePlan-Prefix.pch";
@@ -533,6 +534,7 @@
 					"$(inherited)",
 					/Users/pbohrer/Desktop/GamePlan/GamePlan,
 					/Users/pbohrer/Desktop/GamePlan,
+					/Users/jeremy/Documents/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePlan/GamePlan-Prefix.pch";
@@ -603,6 +605,7 @@
 				C90E813E18B94468004BF989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C90E813F18B94468004BF989 /* Build configuration list for PBXNativeTarget "GamePlanTests" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +614,7 @@
 				C90E814118B94468004BF989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
