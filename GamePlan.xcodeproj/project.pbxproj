@@ -513,8 +513,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/pbohrer/Desktop/GamePlan/GamePlan,
-					/Users/pbohrer/Desktop/GamePlan,
 					/Users/jeremy/Documents/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -532,8 +530,6 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/pbohrer/Desktop/GamePlan/GamePlan,
-					/Users/pbohrer/Desktop/GamePlan,
 					/Users/jeremy/Documents/GamePlan,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
