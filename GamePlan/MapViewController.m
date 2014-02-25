@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.myMapView setDelegate:self];
+    [self addGestureRecogniserToMapView];
     
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
@@ -67,6 +69,40 @@
     [myMapView setRegion:myRegion animated:YES];
     
 }
+
+- (void)addGestureRecogniserToMapView{
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(addPinToMap:)];
+    lpgr.minimumPressDuration = 0.5; //
+    [self.myMapView addGestureRecognizer:lpgr];
+    
+}
+
+/*
+ Called from LongPress Gesture Recogniser, convert Screen X+Y to Longitude and Latitude then add a standard Pin at that Location.
+ The pin has its Title and SubTitle set to Placeholder text, you can modify this as you wish, a good idea would be to run a Geocoding block and put the street address in the SubTitle.
+ */
+- (void)addPinToMap:(UIGestureRecognizer *)gestureRecognizer
+{
+    
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.myMapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
+    
+    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+    
+    toAdd.coordinate = touchMapCoordinate;
+    toAdd.subtitle = @"Subtitle";
+    toAdd.title = @"Title";
+    
+    [self.myMapView addAnnotation:toAdd];
+    
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
