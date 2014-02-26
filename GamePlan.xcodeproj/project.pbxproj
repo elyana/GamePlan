@@ -51,6 +51,8 @@
 		C90E817F18B956C4004BF989 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817E18B956C4004BF989 /* StoreKit.framework */; };
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
 		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
+		C9D47C6418BEA70D00F83434 /* ConfirmFBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D47C6218BEA70D00F83434 /* ConfirmFBInfoViewController.m */; };
+		C9D47C6518BEA70D00F83434 /* ConfirmFBInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D47C6318BEA70D00F83434 /* ConfirmFBInfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,9 @@
 		C90E817E18B956C4004BF989 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C90E818018B956D1004BF989 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		C9D47C6118BEA70D00F83434 /* ConfirmFBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmFBInfoViewController.h; sourceTree = "<group>"; };
+		C9D47C6218BEA70D00F83434 /* ConfirmFBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmFBInfoViewController.m; sourceTree = "<group>"; };
+		C9D47C6318BEA70D00F83434 /* ConfirmFBInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmFBInfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +209,9 @@
 				C90E816C18B94503004BF989 /* AppDelegate.m */,
 				C90E814218B944D4004BF989 /* MainViewController.h */,
 				C90E814318B944D4004BF989 /* MainViewController.m */,
+				C9D47C6118BEA70D00F83434 /* ConfirmFBInfoViewController.h */,
+				C9D47C6218BEA70D00F83434 /* ConfirmFBInfoViewController.m */,
+				C9D47C6318BEA70D00F83434 /* ConfirmFBInfoViewController.xib */,
 				C90E814418B944D4004BF989 /* MapViewController.h */,
 				C90E814518B944D4004BF989 /* MapViewController.m */,
 				3FB3962B18BC8A54007A8A73 /* MapAnnotation.h */,
@@ -351,6 +359,7 @@
 				C90E816918B944E2004BF989 /* settings.png in Resources */,
 				C90E815F18B944E2004BF989 /* FB_Button_Down@2x.png in Resources */,
 				C90E816618B944E2004BF989 /* logo@2x.png in Resources */,
+				C9D47C6518BEA70D00F83434 /* ConfirmFBInfoViewController.xib in Resources */,
 				C90E816218B944E2004BF989 /* friends.png in Resources */,
 				C90E816818B944E2004BF989 /* pin.png in Resources */,
 				C90E812618B94468004BF989 /* Images.xcassets in Resources */,
@@ -390,6 +399,7 @@
 				C90E814C18B944D4004BF989 /* SidebarViewController.m in Sources */,
 				C90E812418B94468004BF989 /* SimpleTableViewController.m in Sources */,
 				C90E814A18B944D4004BF989 /* MainViewController.m in Sources */,
+				C9D47C6418BEA70D00F83434 /* ConfirmFBInfoViewController.m in Sources */,
 				C90E816D18B94503004BF989 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
