@@ -39,16 +39,16 @@ NSArray *tableData;
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
+//            NSDictionary *userData = (NSDictionary *)result;
             
-            NSString *facebookID = userData[@"id"];
-            NSString *name = userData[@"name"];
-            NSString *location = userData[@"location"][@"name"];
-            NSString *gender = userData[@"gender"];
-            NSString *birthday = userData[@"birthday"];
-            NSString *email = userData[@"email"];
-            
-            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+//            NSString *facebookID = userData[@"id"];
+//            NSString *name = userData[@"name"];
+//            NSString *location = userData[@"location"][@"name"];
+//            NSString *gender = userData[@"gender"];
+//            NSString *birthday = userData[@"birthday"];
+//            NSString *email = userData[@"email"];
+//            
+//            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
             
             tableData = [NSArray arrayWithObjects: @"name", @"location", @"gender", @"birthday", @"email", nil];
         }
