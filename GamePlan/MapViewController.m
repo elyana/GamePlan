@@ -41,10 +41,13 @@
     
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    _listButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    _listButton.target = self.revealViewController;
+    _listButton.action = @selector(rightRevealToggle:);
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
