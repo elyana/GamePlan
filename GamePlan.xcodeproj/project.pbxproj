@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F20675F18B97A84008AF0BC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F20675E18B97A84008AF0BC /* Parse.framework */; };
+		3F74C2AC18BFC1D6003825E1 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F74C2AB18BFC1D6003825E1 /* menu.png */; };
 		3FB3962D18BC8A54007A8A73 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3962C18BC8A54007A8A73 /* MapAnnotation.m */; };
 		C90E810E18B94468004BF989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E810D18B94468004BF989 /* Foundation.framework */; };
 		C90E811018B94468004BF989 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E810F18B94468004BF989 /* CoreGraphics.framework */; };
@@ -36,7 +37,6 @@
 		C90E816418B944E2004BF989 /* login_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815618B944E2004BF989 /* login_background@2x.png */; };
 		C90E816518B944E2004BF989 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815718B944E2004BF989 /* logo.png */; };
 		C90E816618B944E2004BF989 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815818B944E2004BF989 /* logo@2x.png */; };
-		C90E816718B944E2004BF989 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815918B944E2004BF989 /* menu.png */; };
 		C90E816818B944E2004BF989 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815A18B944E2004BF989 /* pin.png */; };
 		C90E816918B944E2004BF989 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815B18B944E2004BF989 /* settings.png */; };
 		C90E816A18B944E2004BF989 /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = C90E815C18B944E2004BF989 /* unlock.png */; };
@@ -52,7 +52,6 @@
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
 		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
 		C9D47C6918BFBFCD00F83434 /* ConfirmFBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */; };
-		C9D47C6A18BFBFCD00F83434 /* ConfirmFBInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D47C6818BFBFCD00F83434 /* ConfirmFBInfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		3F20675E18B97A84008AF0BC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		3F74C2AB18BFC1D6003825E1 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		3FB3962B18BC8A54007A8A73 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = ../MapAnnotation.h; sourceTree = "<group>"; };
 		3FB3962C18BC8A54007A8A73 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = ../MapAnnotation.m; sourceTree = "<group>"; };
 		C90E810A18B94468004BF989 /* GamePlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +104,6 @@
 		C90E815618B944E2004BF989 /* login_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_background@2x.png"; sourceTree = "<group>"; };
 		C90E815718B944E2004BF989 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		C90E815818B944E2004BF989 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
-		C90E815918B944E2004BF989 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		C90E815A18B944E2004BF989 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		C90E815B18B944E2004BF989 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		C90E815C18B944E2004BF989 /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
@@ -122,7 +121,6 @@
 		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmFBInfoViewController.h; sourceTree = "<group>"; };
 		C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmFBInfoViewController.m; sourceTree = "<group>"; };
-		C9D47C6818BFBFCD00F83434 /* ConfirmFBInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmFBInfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +205,6 @@
 				C90E811F18B94468004BF989 /* Main.storyboard */,
 				C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */,
 				C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */,
-				C9D47C6818BFBFCD00F83434 /* ConfirmFBInfoViewController.xib */,
 				C90E816B18B94503004BF989 /* AppDelegate.h */,
 				C90E816C18B94503004BF989 /* AppDelegate.m */,
 				C90E814218B944D4004BF989 /* MainViewController.h */,
@@ -261,6 +258,7 @@
 		C90E814E18B944E2004BF989 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F74C2AB18BFC1D6003825E1 /* menu.png */,
 				C90E814F18B944E2004BF989 /* calendar.png */,
 				C90E815018B944E2004BF989 /* FB_Button_Down.png */,
 				C90E815118B944E2004BF989 /* FB_Button_Down@2x.png */,
@@ -271,7 +269,6 @@
 				C90E815618B944E2004BF989 /* login_background@2x.png */,
 				C90E815718B944E2004BF989 /* logo.png */,
 				C90E815818B944E2004BF989 /* logo@2x.png */,
-				C90E815918B944E2004BF989 /* menu.png */,
 				C90E815A18B944E2004BF989 /* pin.png */,
 				C90E815B18B944E2004BF989 /* settings.png */,
 				C90E815C18B944E2004BF989 /* unlock.png */,
@@ -358,12 +355,11 @@
 			files = (
 				C90E816918B944E2004BF989 /* settings.png in Resources */,
 				C90E815F18B944E2004BF989 /* FB_Button_Down@2x.png in Resources */,
+				3F74C2AC18BFC1D6003825E1 /* menu.png in Resources */,
 				C90E816618B944E2004BF989 /* logo@2x.png in Resources */,
-				C9D47C6A18BFBFCD00F83434 /* ConfirmFBInfoViewController.xib in Resources */,
 				C90E816218B944E2004BF989 /* friends.png in Resources */,
 				C90E816818B944E2004BF989 /* pin.png in Resources */,
 				C90E812618B94468004BF989 /* Images.xcassets in Resources */,
-				C90E816718B944E2004BF989 /* menu.png in Resources */,
 				C90E815D18B944E2004BF989 /* calendar.png in Resources */,
 				C90E816418B944E2004BF989 /* login_background@2x.png in Resources */,
 				C90E811818B94468004BF989 /* InfoPlist.strings in Resources */,

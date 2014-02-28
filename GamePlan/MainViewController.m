@@ -13,7 +13,7 @@
 #import "MapViewController.h"
 
 @interface MainViewController ()
-
+@property (nonatomic) IBOutlet MapViewController *mapVC;
 @end
 
 @implementation MainViewController
@@ -22,29 +22,31 @@
 {
     [super viewDidLoad];
     
-    // Change button color
+    // Change button colors
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:0.9f];
+    _listButton.tintColor = [UIColor colorWithWhite:1.0f alpha:0.9f];
     
-    // Set the side bar button action. When it's tapped, it'll the sidebar.
+    // Set the side bar buttons' action. When it's tapped, it'll the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    
-    // Check if user is cached and linked to Facebook, if so, bypass login
-    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-//        [self.navigationController pushViewController:[[MapViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:NO];
-    }
+    _listButton.target = self.revealViewController;
+    _listButton.action = @selector(revealToggle:);
     
     // Set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.hidden = YES;
+
+    NSLog(@"View will appear");
+    // Check if user is cached and linked to Facebook, if so, bypass login
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        [self performSegueWithIdentifier:@"TheMap" sender:self];
+        
+    }
 }
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
@@ -63,10 +65,10 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-//            [self.navigationController pushViewController:[[ConfirmFBInfoViewController alloc]init]];
+            [self performSegueWithIdentifier:@"ConfirmFB" sender:self];
         } else {
             NSLog(@"User with facebook logged in!");
-//            [self.navigationController pushViewController:[[ConfirmFBInfoViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+            [self performSegueWithIdentifier:@"TheMap" sender:self];
         }
     }];
 }

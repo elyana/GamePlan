@@ -14,6 +14,7 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *listButton;
 @property (strong, nonatomic) IBOutlet MKMapView *myMapView;
 
 - (void)addGestureRecogniserToMapView;

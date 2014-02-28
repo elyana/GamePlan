@@ -8,11 +8,12 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface SidebarViewController ()
 
 @property (nonatomic, strong) NSArray *menuItems;
-
+- (IBAction)logoutButtonTouchHandler:(id)sender;
 @end
 
 @implementation SidebarViewController
@@ -64,6 +65,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
+
+    NSLog(@"didSelectRow called with indexpath %@", indexPath);
+    if ( [CellIdentifier  isEqual: @"logout"] ) {
+        [PFUser logOut]; // Log out
+        [self performSegueWithIdentifier:@"Logout" sender:self];
+    }
 }
 
 @end
