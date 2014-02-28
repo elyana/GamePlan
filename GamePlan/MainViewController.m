@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import "ConfirmFBInfoViewController.h"
+#import "MapViewController.h"
 
 @interface MainViewController ()
 
@@ -27,6 +28,11 @@
     // Set the side bar button action. When it's tapped, it'll the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    
+    // Check if user is cached and linked to Facebook, if so, bypass login
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+//        [self.navigationController pushViewController:[[MapViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:NO];
+    }
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -57,7 +63,7 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-//            [self.navigationController pushViewController:[[ConfirmFBInfoViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
+//            [self.navigationController pushViewController:[[ConfirmFBInfoViewController alloc]init]];
         } else {
             NSLog(@"User with facebook logged in!");
 //            [self.navigationController pushViewController:[[ConfirmFBInfoViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];

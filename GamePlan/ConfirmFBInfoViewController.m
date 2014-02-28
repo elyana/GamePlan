@@ -57,6 +57,24 @@ NSArray *tableData;
     
 }
 
+//// Download the user's facebook profile picture
+//self.imageData = [[NSMutableData alloc] init]; // the data will be loaded in here
+//
+//if ([[PFUser currentUser] objectForKey:@"profile"][@"pictureURL"]) {
+//    NSURL *pictureURL = [NSURL URLWithString:[[PFUser currentUser] objectForKey:@"profile"][@"pictureURL"]];
+//    
+//    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:pictureURL
+//                                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
+//                                                          timeoutInterval:2.0f];
+//    // Run network request asynchronously
+//    NSURLConnection *urlConnection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+//    if (!urlConnection) {
+//        NSLog(@"Failed to download picture");
+//    }
+//}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
