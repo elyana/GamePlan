@@ -8,9 +8,6 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
-//#import <Parse/Parse.h>
-#import "Tailgate.h"
-//#import "DetailEntryViewController.h"
 
 @interface MapViewController ()
 
@@ -76,6 +73,27 @@
     //Set mapview
     [myMapView setRegion:myRegion animated:YES];
     
+    //Get existing objects
+    PFQuery *query = [PFQuery queryWithClassName:@"Tailgates"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            for (Tailgate *tg in objects) {
+                PFGeoPoint *pfgp = [tg objectForKey:@"Location"];
+                MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+                toAdd.coordinate = CLLocationCoordinate2DMake(pfgp.latitude, pfgp.longitude);
+                toAdd.subtitle = [tg objectForKey:@"Description"];
+                toAdd.title = [tg objectForKey:@"EventName"];
+                [self.myMapView addAnnotation:toAdd];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
+    
 }
 
 - (void)addGestureRecogniserToMapView{
@@ -111,28 +129,7 @@
                                                   longitude:coordinate.longitude];
         
     [self performSegueWithIdentifier:@"TGDetails" sender:self];
-        
-    PFQuery *query = [PFQuery queryWithClassName:@"Tailgates"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded. The first 100 objects are available in objects
-            NSLog(@"The Array of Locations is %lu items long.", (unsigned long)[objects count]);
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-        
-        
-    
-    //Bring Tailgate in from Parse here
-    
-    /*MapAnnotation *toAdd = [[MapAnnotation alloc]init];
-    toAdd.coordinate = touchMapCoordinate;
-    toAdd.subtitle = description;
-    toAdd.title = name;
-    
-    [self.myMapView addAnnotation:toAdd];*/
+
     }
     
 }
