@@ -66,10 +66,13 @@
             NSLog(@"User with facebook signed up and logged in!");
             [self performSegueWithIdentifier:@"TheMap" sender:self];
             // Create request for user's Facebook data
-            FBRequest *request = [FBRequest requestForMe];
+            FBRequest *request1 = [FBRequest requestForMe];
+            FBRequest *request2 = [FBRequest requestForMyFriends];
+            
+            
             
             // Send request to Facebook
-            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            [request1 startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
                     // result is a dictionary with the user's Facebook data
                     NSDictionary *userData = (NSDictionary *)result;
@@ -102,7 +105,7 @@
                         userProfile[@"birthday"] = userData[@"birthday"];
                     }
                     
-                    if (userData[@"relationship_status"]) {
+                    if (userData[@"email"]) {
                         userProfile[@"email"] = userData[@"email"];
                     }
                     
@@ -115,11 +118,24 @@
                     
                 }
             }];
+            
+            // Send request to Facebook
+            [request2 startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    NSArray *friendObjects = [result objectForKey:@"data"];
+                    [[PFUser currentUser] setObject:friendObjects forKey:@"friends"];
+                    [[PFUser currentUser] saveInBackground];
+                }
+            }];
+
+            
         } else {
-            NSLog(@"User with facebook logged in!");
-            [self performSegueWithIdentifier:@"TheMap" sender:self];
-        }
-    }];
+                    NSLog(@"User with facebook logged in!");
+                        [self performSegueWithIdentifier:@"TheMap" sender:self];
+                }
+            }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
