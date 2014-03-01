@@ -51,6 +51,8 @@
     _listButton.target = self.revealViewController;
     _listButton.action = @selector(rightRevealToggle:);
     
+    self.dropPinModeOn = NO;
+    
     // Set the gesture
     //[self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
@@ -94,6 +96,8 @@
     if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
         return;
     
+    if(self.dropPinModeOn)
+    {
     CGPoint touchPoint = [gestureRecognizer locationInView:self.myMapView];
     CLLocationCoordinate2D touchMapCoordinate =
     [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
@@ -125,7 +129,19 @@
     toAdd.title = name;
     
     [self.myMapView addAnnotation:toAdd];
+    }
     
+}
+
+- (IBAction)switchMode:(UIButton *)sender {
+    if(self.dropPinModeOn)
+    {
+        self.dropPinModeOn = NO;
+    }
+    else
+    {
+        self.dropPinModeOn = YES;
+    }
 }
 
 

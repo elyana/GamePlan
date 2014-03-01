@@ -16,9 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *listButton;
 @property (strong, nonatomic) IBOutlet MKMapView *myMapView;
+@property (nonatomic) BOOL *dropPinModeOn;
 
 - (void)addGestureRecogniserToMapView;
 - (void)addPinToMap:(UIGestureRecognizer *)gestureRecognizer;
-
+- (IBAction)switchMode:(UIButton *)sender;
 
 @end
