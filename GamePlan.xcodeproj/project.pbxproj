@@ -53,7 +53,6 @@
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
 		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
 		C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */; };
-		C9D47C6918BFBFCD00F83434 /* ConfirmFBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +123,6 @@
 		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUpScreenViewController.h; sourceTree = "<group>"; };
 		C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUpScreenViewController.m; sourceTree = "<group>"; };
-		C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmFBInfoViewController.h; sourceTree = "<group>"; };
-		C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmFBInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,8 +207,6 @@
 				C90E811F18B94468004BF989 /* Main.storyboard */,
 				C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */,
 				C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */,
-				C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */,
-				C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */,
 				C90E816B18B94503004BF989 /* AppDelegate.h */,
 				C90E816C18B94503004BF989 /* AppDelegate.m */,
 				C90E814218B944D4004BF989 /* MainViewController.h */,
@@ -405,7 +400,6 @@
 				C90E812418B94468004BF989 /* SimpleTableViewController.m in Sources */,
 				C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */,
 				C90E814A18B944D4004BF989 /* MainViewController.m in Sources */,
-				C9D47C6918BFBFCD00F83434 /* ConfirmFBInfoViewController.m in Sources */,
 				C90E816D18B94503004BF989 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

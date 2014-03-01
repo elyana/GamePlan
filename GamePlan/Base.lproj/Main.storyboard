@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sn1-pt-N00">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Sn1-pt-N00">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -92,7 +92,6 @@
                     <connections>
                         <outlet property="listButton" destination="MWX-RY-ceQ" id="bhN-au-PTX"/>
                         <outlet property="sidebarButton" destination="IX7-R7-E5P" id="WGJ-JF-Ihd"/>
-                        <segue destination="4It-j0-cVs" kind="modal" identifier="ConfirmFB" id="uHr-IN-ku0"/>
                         <segue destination="k9s-Y2-PuS" kind="custom" identifier="TheMap" id="rCj-eB-5dK"/>
                         <segue destination="mAA-7r-1Lc" kind="push" identifier="CurrentUserStartUp" id="Hye-ma-9MU"/>
                     </connections>
@@ -132,68 +131,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzl-3r-KRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="706" y="1080"/>
-        </scene>
-        <!--ConfirmFB Info View Controller-->
-        <scene sceneID="GMb-PZ-Aup">
-            <objects>
-                <viewController id="4It-j0-cVs" customClass="ConfirmFBInfoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a7R-Sm-PYJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="teL-ar-60p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yfW-Vf-T08">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" translatesAutoresizingMaskIntoConstraints="NO" id="PT6-6C-QsH">
-                                <rect key="frame" x="0.0" y="-49" width="320" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PT6-6C-QsH" id="tS9-OK-pcG">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myg-gK-7u5">
-                                            <rect key="frame" x="53" y="49" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75G-GT-Zrv">
-                                <rect key="frame" x="89" y="90" width="142" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5w-cp-8JY">
-                                <rect key="frame" x="39" y="306" width="242" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jp1-TA-JHz">
-                                <rect key="frame" x="114" y="279" width="109" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="wWy-js-QZU"/>
-                    <connections>
-                        <outlet property="Welcome" destination="K5w-cp-8JY" id="ze5-Ib-UlX"/>
-                        <outlet property="imageData" destination="75G-GT-Zrv" id="RHY-Go-K4r"/>
-                        <segue destination="k9s-Y2-PuS" kind="modal" identifier="WelcomeToMap" id="DsK-aD-vBB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L2q-hM-7Yu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1615" y="349"/>
         </scene>
         <!--Sidebar View Controller - Sidebar-->
         <scene sceneID="IiL-Ig-ap1">
@@ -566,7 +503,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DsK-aD-vBB"/>
+        <segue reference="rCj-eB-5dK"/>
         <segue reference="FNw-7V-Zsz"/>
         <segue reference="Pjo-hj-FXo"/>
     </inferredMetricsTieBreakers>
