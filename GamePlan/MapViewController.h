@@ -12,6 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MapAnnotation.h"
 #import "DetailEntryViewController.h"
+#import "Tailgate.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 

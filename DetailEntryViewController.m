@@ -46,6 +46,7 @@
     [tg setObject:descriptionPassed forKey:@"Description"];
     [tg setObject:_location forKey:@"Location"];
     
+    
     [tg saveInBackground];
     
     //[self.navigationController dismissModalViewControllerAnimated:YES];
