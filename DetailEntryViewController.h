@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *description;
 
+- (IBAction)removeModal:(UIButton *)sender;
+
 @end

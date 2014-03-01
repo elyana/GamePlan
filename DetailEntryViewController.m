@@ -7,6 +7,7 @@
 //
 
 #import "DetailEntryViewController.h"
+#import "MapViewController.h"
 
 @interface DetailEntryViewController ()
 
@@ -35,4 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)removeModal:(UIButton *)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

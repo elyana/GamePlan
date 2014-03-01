@@ -48,7 +48,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="k9s-Y2-PuS" kind="custom" id="Lkr-Qm-mjO"/>
+                                    <action selector="removeModal:" destination="05K-r1-VMx" eventType="touchUpInside" id="3HK-eM-lrK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -575,6 +575,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="FNw-7V-Zsz"/>
         <segue reference="Pjo-hj-FXo"/>
-        <segue reference="Lkr-Qm-mjO"/>
+        <segue reference="rCj-eB-5dK"/>
     </inferredMetricsTieBreakers>
 </document>
