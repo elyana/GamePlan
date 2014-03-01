@@ -4,6 +4,65 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Detail Entry View Controller-->
+        <scene sceneID="zZ0-ib-5d5">
+            <objects>
+                <viewController id="05K-r1-VMx" customClass="DetailEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKj-my-yEl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iv6-hc-WDC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B6K-0S-uNN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="My Amazing Tailgate" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-Jh-TZF">
+                                <rect key="frame" x="25" y="105" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="This will be the best tailgate of your life" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-Ku-dvo">
+                                <rect key="frame" x="25" y="189" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT0-44-kZy">
+                                <rect key="frame" x="25" y="76" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGs-Q2-INs">
+                                <rect key="frame" x="25" y="159" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h6-UK-BIr">
+                                <rect key="frame" x="131" y="269" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sumbit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k9s-Y2-PuS" kind="custom" id="Lkr-Qm-mjO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="description" destination="B0q-Ku-dvo" id="w6b-iB-f5c"/>
+                        <outlet property="name" destination="Fso-Jh-TZF" id="kJK-Hd-2Du"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BlB-DC-R6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="-1079"/>
+        </scene>
         <!--Map View Controller - TAILGATES-->
         <scene sceneID="YNi-Xh-xyf">
             <objects>
@@ -54,6 +113,7 @@
                         <outlet property="listButton" destination="C75-tZ-VTG" id="E4A-uB-1lm"/>
                         <outlet property="myMapView" destination="TUg-C0-Nyr" id="Qvu-nY-HYd"/>
                         <outlet property="sidebarButton" destination="Nbb-ic-MtL" id="kmE-Nw-31P"/>
+                        <segue destination="05K-r1-VMx" kind="modal" identifier="TGDetails" id="ECD-L1-vq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIW-C4-WRj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,6 +575,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="FNw-7V-Zsz"/>
         <segue reference="Pjo-hj-FXo"/>
-        <segue reference="rCj-eB-5dK"/>
+        <segue reference="Lkr-Qm-mjO"/>
     </inferredMetricsTieBreakers>
 </document>

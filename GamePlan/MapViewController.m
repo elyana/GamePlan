@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 #import "Tailgate.h"
+#import "DetailEntryViewController.h"
 
 @interface MapViewController ()
 
@@ -102,7 +103,7 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
     
-    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+    
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
     CLLocationCoordinate2D coordinate = [location coordinate];
@@ -110,20 +111,25 @@
                                                   longitude:coordinate.longitude];
     
     Tailgate *tg = [Tailgate objectWithClassName:@"Tailgates"];
+    [self performSegueWithIdentifier:@"TGDetails" sender:self];
     
-    NSString *name = @"My Tailgate";
+    NSString *name = @"foo";
     NSString *description = @"This is a tailgate for the best spirit organization that ever existed";
+        
     [tg setObject:name forKey:@"EventName"];
     [tg setObject:description forKey:@"Description"];
     [tg setObject:loc forKey:@"Location"];
     
     [tg saveInBackground];
+        
+    //[self.navigationController dismissModalViewControllerAnimated:YES];
     
     if(tg!=NULL)
     {
         NSLog(@"foo");
     }
-    
+        
+    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
     toAdd.coordinate = touchMapCoordinate;
     toAdd.subtitle = description;
     toAdd.title = name;
@@ -143,7 +149,6 @@
         self.dropPinModeOn = YES;
     }
 }
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
