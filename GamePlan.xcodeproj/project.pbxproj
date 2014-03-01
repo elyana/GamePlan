@@ -51,6 +51,7 @@
 		C90E817F18B956C4004BF989 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817E18B956C4004BF989 /* StoreKit.framework */; };
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
 		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
+		C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */; };
 		C9D47C6918BFBFCD00F83434 /* ConfirmFBInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,8 @@
 		C90E817E18B956C4004BF989 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C90E818018B956D1004BF989 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUpScreenViewController.h; sourceTree = "<group>"; };
+		C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUpScreenViewController.m; sourceTree = "<group>"; };
 		C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmFBInfoViewController.h; sourceTree = "<group>"; };
 		C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmFBInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				C90E811F18B94468004BF989 /* Main.storyboard */,
+				C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */,
+				C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */,
 				C9D47C6618BFBFCD00F83434 /* ConfirmFBInfoViewController.h */,
 				C9D47C6718BFBFCD00F83434 /* ConfirmFBInfoViewController.m */,
 				C90E816B18B94503004BF989 /* AppDelegate.h */,
@@ -258,6 +263,7 @@
 		C90E814E18B944E2004BF989 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C90E815518B944E2004BF989 /* login_background.png */,
 				3F74C2AB18BFC1D6003825E1 /* menu.png */,
 				C90E814F18B944E2004BF989 /* calendar.png */,
 				C90E815018B944E2004BF989 /* FB_Button_Down.png */,
@@ -265,7 +271,6 @@
 				C90E815218B944E2004BF989 /* FB_Button_Up.png */,
 				C90E815318B944E2004BF989 /* FB_Button_Up@2x.png */,
 				C90E815418B944E2004BF989 /* friends.png */,
-				C90E815518B944E2004BF989 /* login_background.png */,
 				C90E815618B944E2004BF989 /* login_background@2x.png */,
 				C90E815718B944E2004BF989 /* logo.png */,
 				C90E815818B944E2004BF989 /* logo@2x.png */,
@@ -394,6 +399,7 @@
 				3FB3962D18BC8A54007A8A73 /* MapAnnotation.m in Sources */,
 				C90E814C18B944D4004BF989 /* SidebarViewController.m in Sources */,
 				C90E812418B94468004BF989 /* SimpleTableViewController.m in Sources */,
+				C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */,
 				C90E814A18B944D4004BF989 /* MainViewController.m in Sources */,
 				C9D47C6918BFBFCD00F83434 /* ConfirmFBInfoViewController.m in Sources */,
 				C90E816D18B94503004BF989 /* AppDelegate.m in Sources */,

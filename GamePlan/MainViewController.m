@@ -44,7 +44,7 @@
     NSLog(@"View will appear");
     // Check if user is cached and linked to Facebook, if so, bypass login
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        [self performSegueWithIdentifier:@"TheMap" sender:self];
+        [self performSegueWithIdentifier:@"CurrentUserStartUp" sender:self];
         
     }
 }
