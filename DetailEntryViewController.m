@@ -37,6 +37,24 @@
 }
 
 - (IBAction)removeModal:(UIButton *)sender {
+    Tailgate *tg = [Tailgate objectWithClassName:@"Tailgates"];    
+    
+    NSString *namePassed = [NSString stringWithFormat:@"%@", _name.text];
+    NSString *descriptionPassed = [NSString stringWithFormat:@"%@", _description.text];
+    
+    [tg setObject:namePassed forKey:@"EventName"];
+    [tg setObject:descriptionPassed forKey:@"Description"];
+    [tg setObject:_location forKey:@"Location"];
+    
+    [tg saveInBackground];
+    
+    //[self.navigationController dismissModalViewControllerAnimated:YES];
+    
+    if(tg!=NULL)
+    {
+        NSLog(@"foo");
+    }
+
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 @end

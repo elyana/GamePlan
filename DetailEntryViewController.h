@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Tailgate.h"
 
 @interface DetailEntryViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *description;
+@property (strong, nonatomic) PFGeoPoint *location;
 
 - (IBAction)removeModal:(UIButton *)sender;
 
