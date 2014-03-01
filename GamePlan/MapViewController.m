@@ -9,7 +9,6 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
-#import "PinnedLocation.h"
 
 @interface MapViewController ()
 
@@ -105,12 +104,10 @@
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
                                                   longitude:coordinate.longitude];
     
-    PinnedLocation *loc = [PinnedLocation objectWithClassName:@"Location"];
-    //NSLog(@"here");
-    [loc setPoint:geoPoint];
-    //NSLog(@"there");
-    [loc saveInBackground];
-        if(loc!=NULL)
+    PFObject *object = [PFObject objectWithClassName:@"Location"];
+    [object saveInBackground];
+    
+    if(object!=NULL)
     {
         NSLog(@"foo");
     }
