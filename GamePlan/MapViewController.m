@@ -8,9 +8,9 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
-#import <Parse/Parse.h>
+//#import <Parse/Parse.h>
 #import "Tailgate.h"
-#import "DetailEntryViewController.h"
+//#import "DetailEntryViewController.h"
 
 @interface MapViewController ()
 
@@ -107,36 +107,41 @@
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
     CLLocationCoordinate2D coordinate = [location coordinate];
-    PFGeoPoint *loc = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
+    _loc = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
                                                   longitude:coordinate.longitude];
-    
-    Tailgate *tg = [Tailgate objectWithClassName:@"Tailgates"];
+        
     [self performSegueWithIdentifier:@"TGDetails" sender:self];
-    
-    NSString *name = @"foo";
-    NSString *description = @"This is a tailgate for the best spirit organization that ever existed";
         
-    [tg setObject:name forKey:@"EventName"];
-    [tg setObject:description forKey:@"Description"];
-    [tg setObject:loc forKey:@"Location"];
-    
-    [tg saveInBackground];
+    PFQuery *query = [PFQuery queryWithClassName:@"Tailgates"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            NSLog(@"The Array of Locations is %lu items long.", (unsigned long)[objects count]);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
         
-    //[self.navigationController dismissModalViewControllerAnimated:YES];
-    
-    if(tg!=NULL)
-    {
-        NSLog(@"foo");
-    }
         
-    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+    
+    //Bring Tailgate in from Parse here
+    
+    /*MapAnnotation *toAdd = [[MapAnnotation alloc]init];
     toAdd.coordinate = touchMapCoordinate;
     toAdd.subtitle = description;
     toAdd.title = name;
     
-    [self.myMapView addAnnotation:toAdd];
+    [self.myMapView addAnnotation:toAdd];*/
     }
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"TGDetails"]){
+        DetailEntryViewController *controller = (DetailEntryViewController *)segue.destinationViewController;
+        controller.location = _loc;
+    }
 }
 
 - (IBAction)switchMode:(UIButton *)sender {

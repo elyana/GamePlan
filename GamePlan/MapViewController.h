@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 #import "MapAnnotation.h"
+#import "DetailEntryViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
@@ -17,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *listButton;
 @property (strong, nonatomic) IBOutlet MKMapView *myMapView;
 @property (nonatomic) BOOL *dropPinModeOn;
+@property (nonatomic, strong) PFGeoPoint *loc;
 
 - (void)addGestureRecogniserToMapView;
 - (void)addPinToMap:(UIGestureRecognizer *)gestureRecognizer;
