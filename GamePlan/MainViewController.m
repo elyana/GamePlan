@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
-#import "ConfirmFBInfoViewController.h"
 #import "MapViewController.h"
 
 @interface MainViewController ()
@@ -65,7 +64,57 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self performSegueWithIdentifier:@"ConfirmFB" sender:self];
+            [self performSegueWithIdentifier:@"TheMap" sender:self];
+            // Create request for user's Facebook data
+            FBRequest *request = [FBRequest requestForMe];
+            
+            // Send request to Facebook
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    // result is a dictionary with the user's Facebook data
+                    NSDictionary *userData = (NSDictionary *)result;
+                    
+                    //get facebook id and pic URL
+                    NSString *facebookID = userData[@"id"];
+                    NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+                    
+                    
+                    //create user profile
+                    NSMutableDictionary *userProfile = [NSMutableDictionary dictionaryWithCapacity:7];
+                    
+                    if (facebookID) {
+                        userProfile[@"facebookId"] = facebookID;
+                    }
+                    
+                    if (userData[@"name"]) {
+                        userProfile[@"name"] = userData[@"name"];
+                    }
+                    
+                    if (userData[@"location"][@"name"]) {
+                        userProfile[@"location"] = userData[@"location"][@"name"];
+                    }
+                    
+                    if (userData[@"gender"]) {
+                        userProfile[@"gender"] = userData[@"gender"];
+                    }
+                    
+                    if (userData[@"birthday"]) {
+                        userProfile[@"birthday"] = userData[@"birthday"];
+                    }
+                    
+                    if (userData[@"relationship_status"]) {
+                        userProfile[@"email"] = userData[@"email"];
+                    }
+                    
+                    if ([pictureURL absoluteString]) {
+                        userProfile[@"pictureURL"] = [pictureURL absoluteString];
+                    }
+                    
+                    [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
+                    [[PFUser currentUser] saveInBackground];
+                    
+                }
+            }];
         } else {
             NSLog(@"User with facebook logged in!");
             [self performSegueWithIdentifier:@"TheMap" sender:self];
