@@ -9,7 +9,7 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
-#import "Location.h"
+#import "Tailgate.h"
 
 @interface MapViewController ()
 
@@ -102,10 +102,10 @@
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
     CLLocationCoordinate2D coordinate = [location coordinate];
-    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
+    PFGeoPoint *loc = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
                                                   longitude:coordinate.longitude];
     
-    Location *loc = [Location objectWithClassName:@"Location"];
+    Tailgate *tg = [Tailgate objectWithClassName:@"Tailgates"];
     
    /* //create user profile
     NSMutableDictionary *info = [NSMutableDictionary dictionaryWithCapacity:5];
@@ -114,11 +114,14 @@
     }*/
     
     NSString *name = @"My Tailgate";
-    [loc setObject:name forKey:@"EventName"];
+    NSString *description = @"This is a tailgate for the best spirit organization that ever existed";
+    [tg setObject:name forKey:@"EventName"];
+    [tg setObject:description forKey:@"Description"];
+    [tg setObject:loc forKey:@"Location"];
     
-    [loc saveInBackground];
+    [tg saveInBackground];
     
-    if(loc!=NULL)
+    if(tg!=NULL)
     {
         NSLog(@"foo");
     }

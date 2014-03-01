@@ -1,5 +1,5 @@
 //
-//  Location.h
+//  Tailgate.h
 //  GamePlan
 //
 //  Created by Jeremy Hintz on 2/28/14.
@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface Location : PFObject
+@interface Tailgate : PFObject
 
 @end
