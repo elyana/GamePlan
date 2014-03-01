@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfirmFBInfoViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *Welcome;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imageData;
 
 @end
