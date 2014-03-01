@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface MapViewController ()
 
@@ -96,13 +97,26 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
     
-    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+   // MapAnnotation *toAdd = [[MapAnnotation alloc]init];
     
-    toAdd.coordinate = touchMapCoordinate;
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
+                                                  longitude:coordinate.longitude];
+    
+    PFObject *object = [PFObject objectWithClassName:@"Location"];
+    [object saveInBackground];
+    
+    if(object!=NULL)
+    {
+        NSLog(@"foo");
+    }
+    
+    /*toAdd.coordinate = touchMapCoordinate;
     toAdd.subtitle = @"Subtitle";
     toAdd.title = @"Title";
     
-    [self.myMapView addAnnotation:toAdd];
+    [self.myMapView addAnnotation:toAdd];*/
     
 }
 
