@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
+#import "Location.h"
 
 @interface MapViewController ()
 
@@ -104,10 +105,20 @@
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude
                                                   longitude:coordinate.longitude];
     
-    PFObject *object = [PFObject objectWithClassName:@"Location"];
-    [object saveInBackground];
+    Location *loc = [Location objectWithClassName:@"Location"];
     
-    if(object!=NULL)
+   /* //create user profile
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithCapacity:5];
+    if (geoPoint) {
+        info[@"point"] = geoPoint;
+    }*/
+    
+    NSString *name = @"My Tailgate";
+    [loc setObject:name forKey:@"EventName"];
+    
+    [loc saveInBackground];
+    
+    if(loc!=NULL)
     {
         NSLog(@"foo");
     }
