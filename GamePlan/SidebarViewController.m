@@ -67,6 +67,31 @@
     return cell;
 }
 
+- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+{
+    // Set the title of navigation bar by using the menu items
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UINavigationController *destViewController = (UINavigationController*)segue.destinationViewController;
+    destViewController.title = [[_menuItems objectAtIndex:indexPath.row] capitalizedString];
+    
+    NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
+    if ( [CellIdentifier  isEqual: @"logout"] ) {
+        [PFUser logOut]; // Log out
+    
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };
+    }
+    
+}
+}
+    
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
@@ -74,8 +99,12 @@
     NSLog(@"didSelectRow called with indexpath %@", indexPath);
     if ( [CellIdentifier  isEqual: @"logout"] ) {
         [PFUser logOut]; // Log out
-        [self performSegueWithIdentifier:@"Logout" sender:self];
+        [self performSegueWithIdentifier:@"logout" sender:self];
+    }else if ( [CellIdentifier  isEqual: @"settings"] ) {
+        [self performSegueWithIdentifier:@"settings" sender:self];
     }
+    
 }
+
 
 @end
