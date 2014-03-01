@@ -98,7 +98,7 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
     
-   // MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:touchMapCoordinate.latitude longitude:touchMapCoordinate.longitude];
     CLLocationCoordinate2D coordinate = [location coordinate];
@@ -106,12 +106,6 @@
                                                   longitude:coordinate.longitude];
     
     Tailgate *tg = [Tailgate objectWithClassName:@"Tailgates"];
-    
-   /* //create user profile
-    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithCapacity:5];
-    if (geoPoint) {
-        info[@"point"] = geoPoint;
-    }*/
     
     NSString *name = @"My Tailgate";
     NSString *description = @"This is a tailgate for the best spirit organization that ever existed";
@@ -126,11 +120,11 @@
         NSLog(@"foo");
     }
     
-    /*toAdd.coordinate = touchMapCoordinate;
-    toAdd.subtitle = @"Subtitle";
-    toAdd.title = @"Title";
+    toAdd.coordinate = touchMapCoordinate;
+    toAdd.subtitle = description;
+    toAdd.title = name;
     
-    [self.myMapView addAnnotation:toAdd];*/
+    [self.myMapView addAnnotation:toAdd];
     
 }
 
