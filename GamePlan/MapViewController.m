@@ -111,6 +111,19 @@
                                                   longitude:coordinate.longitude];
         
     [self performSegueWithIdentifier:@"TGDetails" sender:self];
+        
+    PFQuery *query = [PFQuery queryWithClassName:@"Tailgates"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded. The first 100 objects are available in objects
+            NSLog(@"The Array of Locations is %lu items long.", (unsigned long)[objects count]);
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+        
+        
     
     //Bring Tailgate in from Parse here
     
