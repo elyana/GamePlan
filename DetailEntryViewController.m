@@ -41,10 +41,12 @@
     
     NSString *namePassed = [NSString stringWithFormat:@"%@", _name.text];
     NSString *descriptionPassed = [NSString stringWithFormat:@"%@", _description.text];
+    PFUser *owner = [PFUser currentUser];
     
     [tg setObject:namePassed forKey:@"EventName"];
     [tg setObject:descriptionPassed forKey:@"Description"];
     [tg setObject:_location forKey:@"Location"];
+    [tg setObject:owner.objectId forKey:@"Owner"];
     
     
     [tg saveInBackground];
