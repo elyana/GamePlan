@@ -51,11 +51,6 @@
     
     //[self.navigationController dismissModalViewControllerAnimated:YES];
     
-    if(tg!=NULL)
-    {
-        NSLog(@"foo");
-    }
-
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 @end

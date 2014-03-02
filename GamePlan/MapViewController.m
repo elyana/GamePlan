@@ -74,26 +74,59 @@
     [myMapView setRegion:myRegion animated:YES];
     
     //Get existing objects
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+
+    [self performSelector:@selector(loadPins) withObject:nil afterDelay:0.5];
+}
+
+- (void)loadPins
+{
     PFQuery *query = [PFQuery queryWithClassName:@"Tailgates"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded. The first 100 objects are available in objects
+            NSMutableArray *annotations = [[self.myMapView annotations] mutableCopy];
+            
             for (Tailgate *tg in objects) {
-                PFGeoPoint *pfgp = [tg objectForKey:@"Location"];
-                MapAnnotation *toAdd = [[MapAnnotation alloc]init];
-                toAdd.coordinate = CLLocationCoordinate2DMake(pfgp.latitude, pfgp.longitude);
-                toAdd.subtitle = [tg objectForKey:@"Description"];
-                toAdd.title = [tg objectForKey:@"EventName"];
-                [self.myMapView addAnnotation:toAdd];
+                
+                BOOL addIt = true;
+                // See if it is already added
+                for (int i = 0 ; i < annotations.count ; i++) {
+                    MapAnnotation *an = (MapAnnotation *)[annotations objectAtIndex:i];
+                    
+                    if ( an.parseId == tg.objectId ) {
+                        addIt = false;
+                        
+                        [annotations removeObject:an];
+                    }
+                }
+                
+                //add it if not already on the map
+                if ( addIt ) {
+                    PFGeoPoint *pfgp = [tg objectForKey:@"Location"];
+                    MapAnnotation *toAdd = [[MapAnnotation alloc]init];
+                    toAdd.parseId = tg.objectId;
+                    toAdd.coordinate = CLLocationCoordinate2DMake(pfgp.latitude, pfgp.longitude);
+                    toAdd.subtitle = [tg objectForKey:@"Description"];
+                    toAdd.title = [tg objectForKey:@"EventName"];
+                    [self.myMapView addAnnotation:toAdd];
+                }
+            }
+            
+            //remove the annotations of inactive tgs
+            if ( annotations.count > 0 ) {
+                [self.myMapView removeAnnotations:annotations];
             }
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-
-    
-    
 }
 
 - (void)addGestureRecogniserToMapView{
@@ -150,11 +183,6 @@
     {
         self.dropPinModeOn = YES;
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
