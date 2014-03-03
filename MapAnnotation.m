@@ -13,5 +13,6 @@
 @synthesize coordinate;
 @synthesize title;
 @synthesize subtitle;
+@synthesize parseId;
 
 @end

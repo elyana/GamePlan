@@ -13,13 +13,14 @@
 #import "MapAnnotation.h"
 #import "DetailEntryViewController.h"
 #import "Tailgate.h"
+#import "SWRevealViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, SWRevealViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *listButton;
 @property (strong, nonatomic) IBOutlet MKMapView *myMapView;
-@property (nonatomic) BOOL *dropPinModeOn;
+@property (nonatomic) BOOL dropPinModeOn;
 @property (nonatomic, strong) PFGeoPoint *loc;
 
 - (void)addGestureRecogniserToMapView;

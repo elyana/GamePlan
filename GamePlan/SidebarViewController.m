@@ -11,9 +11,7 @@
 #import <Parse/Parse.h>
 
 @interface SidebarViewController ()
-
 @property (nonatomic, strong) NSArray *menuItems;
-- (IBAction)logoutButtonTouchHandler:(id)sender;
 @end
 
 @implementation SidebarViewController
@@ -67,6 +65,7 @@
     return cell;
 }
 
+//dont know if I still need this...
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     // Set the title of navigation bar by using the menu items
@@ -99,9 +98,9 @@
     NSLog(@"didSelectRow called with indexpath %@", indexPath);
     if ( [CellIdentifier  isEqual: @"logout"] ) {
         [PFUser logOut]; // Log out
-        [self performSegueWithIdentifier:@"logout" sender:self];
-    }else if ( [CellIdentifier  isEqual: @"settings"] ) {
-        [self performSegueWithIdentifier:@"settings" sender:self];
+        [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+    }else if ( [CellIdentifier  isEqual: @"events"] ) {
+        [self performSegueWithIdentifier:@"events" sender:self];
     }
     
 }

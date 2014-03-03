@@ -39,6 +39,9 @@
     [self.myMapView setDelegate:self];
     [self addGestureRecogniserToMapView];
     
+    //make delegate to notify when to check for login
+    [self.revealViewController setDelegate:self];
+    
     // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     _listButton.tintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
@@ -81,7 +84,17 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
 
+    // Check if user is cached and linked to Facebook, if not, go to login
+    if (![PFUser currentUser]) {
+        [self performSegueWithIdentifier:@"MapToLogin" sender:self];
+    }
+
     [self performSelector:@selector(loadPins) withObject:nil afterDelay:0.5];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)loadPins
@@ -174,14 +187,20 @@
     }
 }
 
-- (IBAction)switchMode:(UIButton *)sender {
+- (IBAction)switchMode:(UIButton *)sender
+{
+    
     if(self.dropPinModeOn)
     {
         self.dropPinModeOn = NO;
+        [sender setTitle:@"Drop" forState:UIControlStateNormal];
+        [sender setTitle:@"Drop" forState:UIControlStateHighlighted];
     }
     else
     {
         self.dropPinModeOn = YES;
+        [sender setTitle:@"Cancel" forState:UIControlStateNormal];
+        [sender setTitle:@"Cancel" forState:UIControlStateHighlighted];
     }
 }
 
@@ -189,6 +208,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
+{
+    if ( position == FrontViewPositionLeft ) {
+        if (![PFUser currentUser]) {
+            [self performSegueWithIdentifier:@"MapToLogin" sender:self];
+        }
+    }
 }
 
 @end

@@ -41,17 +41,13 @@
     self.navigationController.navigationBar.hidden = YES;
 
     NSLog(@"View will appear");
-    // Check if user is cached and linked to Facebook, if so, bypass login
-    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        [self performSegueWithIdentifier:@"CurrentUserStartUp" sender:self];
-        
-    }
 }
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
     // The permissions requested from the user
     NSArray *permissionsArray = @[ @"user_about_me", @"email", @"user_birthday", @"user_location"];
-    
+    [self dismissViewControllerAnimated:NO completion:nil];
+
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
 //        [_activityIndicator stopAnimating]; // Hide loading indicator
@@ -64,7 +60,7 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            [self performSegueWithIdentifier:@"TheMap" sender:self];
+            //[self dismissViewControllerAnimated:NO completion:nil];
             // Create request for user's Facebook data
             FBRequest *request1 = [FBRequest requestForMe];
             FBRequest *request2 = [FBRequest requestForMyFriends];
@@ -130,12 +126,10 @@
 
             
         } else {
-                    NSLog(@"User with facebook logged in!");
-                        [self performSegueWithIdentifier:@"TheMap" sender:self];
-                }
-            }];
-    
-    
+            NSLog(@"User with facebook logged in!");
+            //[self dismissViewControllerAnimated:NO completion:nil];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning

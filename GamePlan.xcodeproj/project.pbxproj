@@ -19,7 +19,6 @@
 		C90E811818B94468004BF989 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90E811618B94468004BF989 /* InfoPlist.strings */; };
 		C90E811A18B94468004BF989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C90E811918B94468004BF989 /* main.m */; };
 		C90E812118B94468004BF989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90E811F18B94468004BF989 /* Main.storyboard */; };
-		C90E812418B94468004BF989 /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90E812318B94468004BF989 /* SimpleTableViewController.m */; };
 		C90E812618B94468004BF989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90E812518B94468004BF989 /* Images.xcassets */; };
 		C90E812D18B94468004BF989 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E812C18B94468004BF989 /* XCTest.framework */; };
 		C90E812E18B94468004BF989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E810D18B94468004BF989 /* Foundation.framework */; };
@@ -54,7 +53,7 @@
 		C90E817F18B956C4004BF989 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E817E18B956C4004BF989 /* StoreKit.framework */; };
 		C90E818118B956D2004BF989 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818018B956D1004BF989 /* SystemConfiguration.framework */; };
 		C90E818318B95BE5004BF989 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90E818218B95BE5004BF989 /* FacebookSDK.framework */; };
-		C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */; };
+		C9AF4A9918C44DE5004ADAD4 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF4A9818C44DE5004ADAD4 /* EventsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +85,6 @@
 		C90E811918B94468004BF989 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C90E811B18B94468004BF989 /* GamePlan-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GamePlan-Prefix.pch"; sourceTree = "<group>"; };
 		C90E812018B94468004BF989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C90E812218B94468004BF989 /* SimpleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewController.h; sourceTree = "<group>"; };
-		C90E812318B94468004BF989 /* SimpleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewController.m; sourceTree = "<group>"; };
 		C90E812518B94468004BF989 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C90E812B18B94468004BF989 /* GamePlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90E812C18B94468004BF989 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -127,8 +124,8 @@
 		C90E817E18B956C4004BF989 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C90E818018B956D1004BF989 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C90E818218B95BE5004BF989 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUpScreenViewController.h; sourceTree = "<group>"; };
-		C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUpScreenViewController.m; sourceTree = "<group>"; };
+		C9AF4A9718C44DE5004ADAD4 /* EventsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsListViewController.h; sourceTree = "<group>"; };
+		C9AF4A9818C44DE5004ADAD4 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				C90E811F18B94468004BF989 /* Main.storyboard */,
-				C9AF4A8E18C16AA7004ADAD4 /* StartUpScreenViewController.h */,
-				C9AF4A8F18C16AA7004ADAD4 /* StartUpScreenViewController.m */,
+				C9AF4A9718C44DE5004ADAD4 /* EventsListViewController.h */,
+				C9AF4A9818C44DE5004ADAD4 /* EventsListViewController.m */,
 				C90E816B18B94503004BF989 /* AppDelegate.h */,
 				C90E816C18B94503004BF989 /* AppDelegate.m */,
 				C90E814218B944D4004BF989 /* MainViewController.h */,
@@ -229,8 +226,6 @@
 				C90E814718B944D4004BF989 /* SidebarViewController.m */,
 				C90E814818B944D4004BF989 /* SWRevealViewController.h */,
 				C90E814918B944D4004BF989 /* SWRevealViewController.m */,
-				C90E812218B94468004BF989 /* SimpleTableViewController.h */,
-				C90E812318B94468004BF989 /* SimpleTableViewController.m */,
 				C90E812518B94468004BF989 /* Images.xcassets */,
 				C90E814E18B944E2004BF989 /* Images */,
 				C90E811418B94468004BF989 /* Supporting Files */,
@@ -403,13 +398,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90E814D18B944D4004BF989 /* SWRevealViewController.m in Sources */,
+				C9AF4A9918C44DE5004ADAD4 /* EventsListViewController.m in Sources */,
 				C90E811A18B94468004BF989 /* main.m in Sources */,
 				C90E814B18B944D4004BF989 /* MapViewController.m in Sources */,
 				3FDF6EC818C1FC16002DD331 /* DetailEntryViewController.m in Sources */,
 				3FB3962D18BC8A54007A8A73 /* MapAnnotation.m in Sources */,
 				C90E814C18B944D4004BF989 /* SidebarViewController.m in Sources */,
-				C90E812418B94468004BF989 /* SimpleTableViewController.m in Sources */,
-				C9AF4A9018C16AA7004ADAD4 /* StartUpScreenViewController.m in Sources */,
 				C90E814A18B944D4004BF989 /* MainViewController.m in Sources */,
 				3FA6E43718C1ACAD00B7D26B /* Tailgate.m in Sources */,
 				C90E816D18B94503004BF989 /* AppDelegate.m in Sources */,
